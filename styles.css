@@ -1,0 +1,141 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que el body tenga un 100% de altura */
+    background-image: url('https://llerosadreams.es/wp-content/uploads/2020/04/lenguajes-programacion.png');
+    background-size: cover;
+    background-position: center;
+    color: #020202;
+    text-align: center;
+    overflow: hidden;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Aumentamos el ancho para dos columnas */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 23px; /* Espacio entre columnas */
+}
+
+#successMessage {
+    display: none; /* Oculta el mensaje por defecto */
+    position: fixed;
+    top: 50%; /* Centra verticalmente */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -50%); /* Ajuste para que esté exactamente centrado */
+    background-color: #28a745;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 9999;
+    text-align: center;
+}
+
+
+h1 {
+    grid-column: span 2; /* El título ocupa las dos columnas */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #41698f; /* Borde uniforme para todos los campos */
+    border-radius: 4px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+}
+
+textarea {
+    resize: vertical; /* Permite cambiar el tamaño solo verticalmente */
+    min-height: 80px; /* Establece una altura mínima para el campo de texto */
+    overflow: auto; /* Controla el desbordamiento dentro del área de comentarios */
+}
+
+input[type="submit"], .btn {
+    width: 100%; /* Asegura que ambos botones tengan el mismo ancho */
+    padding: 0; /* Elimina el padding para mantener la altura fija */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Asegura que el tamaño de la fuente sea el mismo */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: flex; /* Usa flexbox para centrar el texto */
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+    height: 50px; /* Establece una altura fija para los botones */
+}
+
+.botones {
+    grid-column: span 2; /* Ocupa las dos columnas */
+    display: flex;
+    justify-content: space-between; /* Espacio entre los botones */
+    gap: 10px; /* Espacio entre botones */
+    padding: 10px;
+}
+
+input[type="submit"], .btn {
+    flex: 1; /* Hace que ambos botones tengan el mismo tamaño */
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center; /* Centra el texto dentro del botón */
+    font-size: 16px; /* Asegura que el tamaño de la fuente sea el mismo */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: flex; /* Usa flexbox para centrar el texto */
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+    max-width: 200px; /* Limita el ancho máximo de los botones */
+    height: 50px; /* Asegura que los botones tengan la misma altura */
+}
+
+a {
+    flex: 1; /* Hace que ambos botones tengan el mismo tamaño */
+    padding: 0; /* Elimina el padding para mantener la altura fija */
+    background-color: #5c5e75;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center; /* Centra el texto dentro del botón */
+    font-size: 16px; /* Asegura que el tamaño de la fuente sea el mismo */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    display: flex; /* Usa flexbox para centrar el texto */
+    align-items: center; /* Centra el texto verticalmente */
+    justify-content: center; /* Centra el texto horizontalmente */
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño */
+    max-width: 0px; /* Limita el ancho máximo del enlace */
+    height: 50px; /* Asegura que el enlace tenga la misma altura que los botones */
+}
+
+input[type="submit"]:hover, .btn:hover {
+    background-color: #6293db;
+}
+
+a:hover {
+    background-color: #02ce02;
+}

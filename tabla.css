@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h2 {
+    color: #ecf0f1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.table-container {
+    width: 90%;
+    max-height: 80vh;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: white;
+    color: black;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+    white-space: normal;  /* Permite el salto de línea en las celdas */
+    word-wrap: break-word;  /* Permite el ajuste de palabras largas */
+    word-break: break-word;  /* Rompe palabras largas si es necesario */
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #d5dbdb;
+}
+
+td img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+td a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+td a[href*="edit"] {
+    background-color: #126cf3;
+}
+
+td a[href*="edit"]:hover {
+    background-color: #22e653;
+}
+
+td a[href*="delete"] {
+    background-color: #a7da1a;
+}
+
+td a[href*="delete"]:hover {
+    background-color: #c0392b;
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    left: 40px;
+    top: 25px;
+}
+
+.btn:hover {
+    background-color: #02ce02;
+}
+
+.comentarios {
+    white-space: normal; /* Permite que el texto se ajuste en varias líneas */
+    word-wrap: break-word; /* Ajusta las palabras largas a la siguiente línea si es necesario */
+    word-break: break-word; /* Rompe las palabras largas si es necesario */
+    height: auto; /* Asegura que la celda crezca en altura si el texto es largo */
+    max-width: 200px; /* Ajusta el ancho máximo de la celda */
+}

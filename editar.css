@@ -1,0 +1,173 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200vh;
+    background-image: url('https://llerosadreams.es/wp-content/uploads/2020/04/lenguajes-programacion.png'); /* Imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    color: #020202;
+    text-align: center;
+    height: 1350vh; /* Ajusta la altura al 100% de la ventana */
+    overflow: hidden; /* Oculta el scroll */
+    
+    
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('https://llerosadreams.es/wp-content/uploads/2020/04/lenguajes-programacion.png'); /* Imagen de fondo */
+    margin: 10;
+    background-color: #f4f4f4;
+}
+
+
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Ajusta el ancho máximo del formulario */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 25px; /* Espacio entre columnas */
+    position: fixed; /* Fija el formulario en la pantalla */
+    top: 50%; /* Lo posicionamos en el centro */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Asegura que el formulario quede perfectamente centrado */
+    z-index: 10; /* Asegura que el formulario esté por encima de la imagen de fondo */
+    max-height: 90vh; /* Evita que el formulario sea más alto que la ventana */
+    overflow-y: auto; /* Permite el desplazamiento solo si el formulario es demasiado largo */
+}
+
+
+
+
+
+
+h2 {
+    font-size: 2.2rem;
+    color: #692121;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: absolute;
+    top: 70px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
+    padding: 1px;
+
+}
+
+/* Título */
+
+
+/* Estilo para las etiquetas */
+label {
+    font-size: 1rem;
+    color: #000000;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Estilo para los campos de entrada */
+input, select, textarea {
+    width: 100%;
+    padding: 6px;
+    margin-top: 8px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto de enfoque */
+input:focus, select:focus, textarea:focus {
+    border-color: #ff7b7b;
+    box-shadow: 0 0 8px rgba(255, 123, 123, 0.3);
+    outline: none;
+}
+
+/* Estilo para el área de texto */
+textarea {
+    resize: vertical;
+}
+
+/* Estilo para el botón de enviar */
+input[type="submit"] {
+    background-color: #1dd62a;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    padding: 12px;
+    margin-top: 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto de hover para el botón */
+input[type="submit"]:hover {
+    background-color: #e86b6b;
+}
+
+/* Efecto de clic para el botón */
+input[type="submit"]:active {
+    background-color: #d85f5f;
+}
+
+/* Estilo de texto adicional o hint */
+.container .hint {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-align: center;
+}
+
+/* Agregamos un esquema de colores para los inputs y botones */
+input[type="text"], input[type="password"], input[type="date"], input[type="file"], select, textarea {
+    border-color: #3498db;
+    background-color: #ecf0f1;
+    
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
+}
+
+.btn {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    position: absolute;
+    left: 40px; /* Ajusta la distancia desde el borde izquierdo */
+    top: 25px; /* Ajusta la distancia desde arriba */
+}
+
+/* Efecto hover */
+.btn:hover {
+    background-color: #02ce02;
+}
+

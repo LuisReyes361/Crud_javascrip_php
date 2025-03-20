@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Base de Datos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form id="formulario" action="submit_form.php" method="post" enctype="multipart/form-data" onsubmit="return validarFormulario()">
+        <h1>Formulario de Registro</h1>
+        
+        <!-- Columna izquierda -->
+        <div>
+            <label for="nombre">Nombre:</label>
+            <!-- Se asegura que no haya espacios antes ni después -->
+            <input type="text" id="nombre" name="nombre" required 
+            pattern="^(?!\s)(?!.*\s$)[A-Za-zÁáÉéÍíÓóÚúÑñ\s]+$" 
+            title="El nombre solo puede contener letras y espacios, sin espacios al inicio ni al final.">
+
+            <label for="contraseña">Contraseña:</label>
+            <!-- No permitir espacios en la contraseña -->
+            <input type="password" id="contraseña" name="contraseña" required autocomplete="new-password" 
+            pattern="^(?!.*\s).{8,}$" 
+            title="La contraseña debe tener al menos 8 caracteres y no puede contener espacios.">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required 
+            pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}" 
+            title="El email debe ser válido y no puede contener caracteres especiales como !, $, %, &, etc.">
+
+            <label>Edad:</label>
+            <input type="number" name="edad" value="<?= $result['edad'] ?>" required min="10" max="100"><br>
+        </div>
+
+        <!-- Columna derecha -->
+        <div>
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required pattern="[0-9]{10}" title="El teléfono debe contener solo 10 dígitos numéricos">
+
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion" required>
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad" required>
+
+            <label for="imagen">Subir Imagen:</label>
+            <input type="file" id="imagen" name="imagen" accept="image/*" required>
+        </div>
+
+        <!-- Elementos que ocupan ambas columnas -->
+        <label for="base_datos">Seleccionar Base de Datos:</label>
+        <select id="base_datos" name="base_datos" required>
+            <option value="mongodb">MongoDB (No Relacional)</option>
+            <option value="mysql">MySQL (Relacional)</option>
+        </select>
+
+        <label for="comentarios">Comentarios:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios..."></textarea>
+
+        <!-- Contenedor para el mensaje de éxito -->
+        <div id="successMessage" class="success-message">
+            <p>¡Formulario enviado con éxito!</p>
+        </div>
+
+        <div class="botones">
+            <input type="submit" value="Enviar">
+            <a href="http://localhost:8000/tabla.php" class="btn">Registros</a>
+        </div>
+    </form>
+
+    <script>
+        // Validación de comentarios (evitar que solo contengan espacios)
+        function validarFormulario() {
+            var comentario = document.getElementById('comentarios').value.trim();
+            var contraseña = document.getElementById('contraseña').value.trim();
+            
+            // Si los comentarios están vacíos o solo tienen espacios, no enviar el formulario
+            if (comentario === '') {
+                alert('El campo de comentarios no puede estar vacío o solo contener espacios.');
+                return false;  // No se enviará el formulario
+            }
+
+            // Si la contraseña contiene espacios, no enviar el formulario
+            if (contraseña.includes(' ')) {
+                alert('La contraseña no puede contener espacios.');
+                return false;  // No se enviará el formulario
+            }
+
+            // Si todo está bien, muestra el mensaje de éxito antes de enviar el formulario
+            showSuccessMessage();
+            return true;  // Permite que el formulario se envíe
+        }
+
+        // Función para mostrar el mensaje de éxito
+        function showSuccessMessage() {
+            // Muestra el mensaje de éxito
+            document.getElementById('successMessage').style.display = 'flex'; 
+            
+            // Después de 3 segundos, se oculta el mensaje
+            setTimeout(function() {
+                document.getElementById('successMessage').style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
